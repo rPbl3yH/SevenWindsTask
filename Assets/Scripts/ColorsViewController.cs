@@ -23,6 +23,12 @@ public class ColorsViewController : MonoBehaviour
         }
     }
 
+    public void SetRandomColors() {
+        foreach (var view in _colorsView) {
+            view.SetColor(GameManager.Instance.CellsController.GetRandomColor());
+        }
+    }
+
     private void Subscribe() {
         foreach (var colorView in _colorsView) {
             colorView.OnSelected += ColorView_OnSelected;

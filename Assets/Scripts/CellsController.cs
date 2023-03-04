@@ -26,6 +26,8 @@ public class CellsController : MonoBehaviour
         }
     }
 
+    public Color GetRandomColor() => _allCells[Random.Range(0, _allCells.Count)].Color;
+
     private void ColorsViewController_OnColorViewSelected(ColorView colorView) {
         var cell = _allCells.First(c => c.Color == colorView.Color);
         SelectCell(cell, false);
