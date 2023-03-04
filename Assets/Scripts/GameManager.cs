@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [field: SerializeField] public LayerController LayerController { private set; get; }
+    [field: SerializeField] public ColorsViewController ColorsViewController { private set; get; }
     [field: SerializeField] public CellsController CellsController { private set; get; }
+    [field: SerializeField] public ConstructorsController ConstructorsController { private set; get; }
 
     public static GameManager Instance { private set; get; }
 
@@ -19,7 +18,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        LayerController.Init();
+        ConstructorsController.Init();
         CellsController.Init();   
+        ColorsViewController.Init(ConstructorsController);
     }
 }

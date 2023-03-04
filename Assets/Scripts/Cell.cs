@@ -22,7 +22,7 @@ public class Cell : MonoBehaviour
         OnSelected?.Invoke(this);
     }
 
-    public void SetSelect(bool isSelect) {
+    public void SetSelection(bool isSelect) {
         _borders.gameObject.SetActive(isSelect);
     }
 }
