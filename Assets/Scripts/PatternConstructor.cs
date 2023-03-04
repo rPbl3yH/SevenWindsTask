@@ -13,13 +13,15 @@ public class PatternConstructor : MonoBehaviour
 
     public void Init() {
         ShowPattern(PatternLayers[0]);
+        GameManager.Instance.ConstructorsController.OnPrevPatternClick += ConstructorsController_OnLeftPatternClick;
+        GameManager.Instance.ConstructorsController.OnNextPatternClick += ConstructorsController_OnRightPatternClick;
     }
 
-    public void SetNextPattern() {
+    private void ConstructorsController_OnRightPatternClick() {
         ShowPattern(1);
     }
 
-    public void SetPrevPattern() {
+    private void ConstructorsController_OnLeftPatternClick() {
         ShowPattern(-1);
     }
 
@@ -38,9 +40,15 @@ public class PatternConstructor : MonoBehaviour
     }
 
     private void ShowPattern(PatternLayer layer) {
-        SelectedPattern?.SetView(false);
+        HideAll();
         SelectedPattern = layer;
         SelectedPattern.SetView(true);
         OnPatternLayerChanged?.Invoke(SelectedPattern);
+    }
+
+    private void HideAll() {
+        foreach (var pattern in PatternLayers) {
+            pattern.SetView(false);
+        }
     }
 }

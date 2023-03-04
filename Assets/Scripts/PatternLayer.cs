@@ -10,8 +10,6 @@ public class PatternLayer : MonoBehaviour
     }
 
     public void SetView(bool isView) {
-        foreach (var layer in ImageLayers) {
-            layer.gameObject.SetActive(isView);
-        }
+        gameObject.SetActive(isView);
     }
 }

@@ -8,6 +8,8 @@ public class ConstructorsController : MonoBehaviour
     public PatternConstructor SelectedConstructor { private set; get; }
 
     public event Action OnRandomColorsClick;
+    public event Action OnNextPatternClick;
+    public event Action OnPrevPatternClick;
 
     public void Init() {
         SelectedConstructor = _pages[0];
@@ -20,5 +22,13 @@ public class ConstructorsController : MonoBehaviour
 
     public void SetRandomColors() {
         OnRandomColorsClick?.Invoke();
+    }
+
+    public void ClickNextPattern() {
+        OnNextPatternClick?.Invoke();
+    }
+
+    public void ClickPrevPattern() {
+        OnPrevPatternClick?.Invoke();
     }
 }
