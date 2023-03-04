@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { private set; get; }
 
     private void Awake() {
-        if(Instance == null) {
+        if (Instance == null) {
             Instance = this;
         }
         else {
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         ConstructorsController.Init();
-        CellsController.Init();   
+        CellsController.Init();
         ColorsViewController.Init(ConstructorsController);
     }
 }

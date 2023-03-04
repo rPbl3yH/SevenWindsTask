@@ -5,13 +5,14 @@ public class ColorsViewController : MonoBehaviour
     [SerializeField] private ColorView[] _colorsView;
 
     public delegate void ColorViewSelectedDelegate(ColorView colorView);
+
     public event ColorViewSelectedDelegate OnColorViewSelected;
 
     private ColorView _selectedColorView;
 
     public void Init(ConstructorsController constructorsController) {
         GameManager.Instance.CellsController.OnColorPicked += CellsController_OnColorPicked;
-        
+
         constructorsController.SelectedConstructor.OnPatternLayerChanged += PatternConstructor_OnPatternLayerChanged;
         Subscribe();
         InitColorsView(constructorsController.SelectedConstructor.SelectedPattern);
@@ -47,7 +48,7 @@ public class ColorsViewController : MonoBehaviour
     }
 
     private void ColorView_OnSelected(ColorView colorLayer) {
-        SelectColorView(colorLayer);   
+        SelectColorView(colorLayer);
     }
 
     private void SelectColorView(ColorView colorLayer) {

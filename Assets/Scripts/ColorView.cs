@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,7 @@ public class ColorView : MonoBehaviour
     public Color Color { get; private set; }
 
     public delegate void LayerSelected(ColorView colorLayer);
+
     public event LayerSelected OnSelected;
 
     private Image _targetImage;

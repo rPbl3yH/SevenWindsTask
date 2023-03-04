@@ -1,4 +1,3 @@
-
 using System.Linq;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class PatternConstructor : MonoBehaviour
     [field: SerializeField] public PatternLayer[] PatternLayers;
 
     public delegate void PatternLayerDelegate(PatternLayer layer);
+
     public event PatternLayerDelegate OnPatternLayerChanged;
 
     public PatternLayer SelectedPattern { private set; get; }

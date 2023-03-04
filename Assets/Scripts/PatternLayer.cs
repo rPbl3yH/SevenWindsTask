@@ -5,10 +5,6 @@ public class PatternLayer : MonoBehaviour
 {
     [field: SerializeField] public Image[] ImageLayers { private set; get; }
 
-    public void Init() {
-        
-    }
-
     public void SetView(bool isView) {
         gameObject.SetActive(isView);
     }
